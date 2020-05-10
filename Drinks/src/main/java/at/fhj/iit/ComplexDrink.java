@@ -13,22 +13,6 @@ public class ComplexDrink extends Drink{
     */
     private List<Liquid> liquids= new ArrayList<>();
 
-   /* public static void main(String ... args){
-
-        ComplexDrink cd= new ComplexDrink("testDrink");
-        try{
-        cd.addLiquid(new Liquid("iwas",12,14));
-        cd.addLiquid(new Liquid("smth",21,45));
-        cd.addLiquid(new Liquid("smth",21,14));
-        }catch(TooManyIngredientsException e){
-            e.printStackTrace();
-        }
-        System.out.println(cd.liquids.size());
-        System.out.println(cd.getAlcoholPercent());
-    }*/
-
-
-
     /**
      * Creates a ComplexDrink object with given name
      * 
