@@ -13,26 +13,25 @@ public class ComplexDrink extends Drink{
     */
     private List<Liquid> liquids= new ArrayList<>();
 
-    /**
-     * Creates a ComplexDrink object with given name
-     * 
-     * @param name name of drink
-     */
+/**
+* Creates a ComplexDrink object with given name
+* 
+* @param name name of drink
+*/
 public ComplexDrink(String name) {
 		super(name);
 }
 
-    /**
-     * Creates a ComplexDrink object with given name
-     * and liquid
-     * 
-     * @param name name of drink
-     */
+/**
+* Creates a ComplexDrink object with given name
+* and liquid
+* 
+* @param name name of drink
+*/
 public ComplexDrink(String name,Liquid liquid) {
         super(name);
         liquids.add(liquid);
 }
-
 
 /**
 * Returns volume of all liquids
@@ -57,11 +56,10 @@ public double getVolume() {
 public double getAlcoholPercent() {
     double percent=0;
     for(Liquid l:liquids){
-        percent+=l.getAlcoholPercent();
+        percent+=l.getAlcoholPercent()*l.getVolume()/getVolume();
     }
-	return percent;
+	return Math.round(percent*100)/100d;
 }
-
 
 /**
 * Gives information if drink is alcoholic or not
@@ -76,7 +74,6 @@ public boolean isAlcoholic() {
 	return false;
 }
 
-
 /**
  * Adds a liquid to the drink
  * 
@@ -85,7 +82,7 @@ public boolean isAlcoholic() {
  */
 public void addLiquid(Liquid liquid) throws TooManyIngredientsException{
 
-if(liquids.size()==2){
+if(liquids.size()==10){
     System.out.println("here");
     throw new TooManyIngredientsException(liquid);
 }else{
