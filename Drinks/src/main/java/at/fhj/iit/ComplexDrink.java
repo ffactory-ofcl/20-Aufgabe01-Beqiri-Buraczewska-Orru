@@ -93,8 +93,6 @@ if(liquids.size()==2){
 
 }
 
-
-
 /**
  * Class Exception for the limit of liquids in a drink
  */
