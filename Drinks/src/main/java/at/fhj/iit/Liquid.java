@@ -1,4 +1,5 @@
 package at.fhj.iit;
+
 /**
  * Class represents a liquid which can be used in
  * drinks
@@ -22,8 +23,8 @@ public class Liquid {
      * Creates new liquid with given name, volume and
      * alcoholPercent
      *
-     * @param name name of liquid
-     * @param volume volume of liquid
+     * @param name           name of liquid
+     * @param volume         volume of liquid
      * @param alcoholPercent of liquid
      */
     public Liquid(String name, double volume, double alcoholPercent) {
@@ -76,6 +77,7 @@ public class Liquid {
     public double getAlcoholPercent() {
         return alcoholPercent;
     }
+
     /**
      * Setter for alcoholPercent
      *
