@@ -13,7 +13,7 @@ SimpleDrinks.java [extends Drink]
 LiquidTest.java
 ```
 
-### Planned extensions:
+### Our extensions: ##
 **Classes**:
 - ComplexDrink extends Drink
     - takes a `List<Liquid>` as ingredients
@@ -35,5 +35,22 @@ LiquidTest.java
 
 - TooManyIngredientsException
     - Occurs when attempting to create a ComplexDrink with more than 10 ingredients
+
+## Important Code Snippet ##
+This is the code that checks whether the supplied string is of a valid color
+``` java
+switch (color) {
+    case "red":
+    case "blue":
+    case "green":
+    case "yellow":
+    case "pink":
+        this.color = color;
+        break;
+
+    default:
+        throw new InvalidColorException();
+}
+```
 
 Project by Beqiri Fisnik, Buraczewska Diana, Orru Filippo
