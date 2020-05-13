@@ -24,18 +24,7 @@ public class ColoredDrink extends ComplexDrink {
      */
     public ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException {
         super(name, liquid);
-        switch (name) {
-            case "red":
-            case "blue":
-            case "green":
-            case "yellow":
-            case "pink":
-                this.color = color;
-                break;
-
-            default:
-                throw new InvalidColorException();
-        }
+        setColor(color);
     }
 
     /**
@@ -51,18 +40,7 @@ public class ColoredDrink extends ComplexDrink {
      */
     public ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException {
         super(name, liquids);
-        switch (name) {
-            case "red":
-            case "blue":
-            case "green":
-            case "yellow":
-            case "pink":
-                this.color = color;
-                break;
-
-            default:
-                throw new InvalidColorException();
-        }
+        setColor(color);
     }
 
     /**
@@ -78,9 +56,23 @@ public class ColoredDrink extends ComplexDrink {
      * Sets the color of the drink
      * 
      * @param color desired color of the drink as a string
+     * 
+     * @throws InvalidColorException Thrown when a color other than [red, blue,
+     *                               green, yellow, pink] is supplied
      */
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String color) throws InvalidColorException {
+        switch (name) {
+            case "red":
+            case "blue":
+            case "green":
+            case "yellow":
+            case "pink":
+                this.color = color;
+                break;
+
+            default:
+                throw new InvalidColorException();
+        }
     }
 }
 
