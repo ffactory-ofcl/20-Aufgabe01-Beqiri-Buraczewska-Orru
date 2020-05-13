@@ -22,7 +22,7 @@ public class ColoredDrink extends ComplexDrink {
      * @throws InvalidColorException Thrown when a color other than [red, blue,
      *                               green, yellow, pink] is supplied
      */
-    ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException {
+    public ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException {
         super(name, liquid);
         switch (name) {
             case "red":
@@ -49,7 +49,7 @@ public class ColoredDrink extends ComplexDrink {
      * @throws InvalidColorException Thrown when a color other than [red, blue,
      *                               green, yellow, pink] is supplied
      */
-    ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException {
+    public ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException {
         super(name, liquids);
         switch (name) {
             case "red":

@@ -20,7 +20,7 @@ public class GlassDrink extends ComplexDrink {
      * @param liquid the one liquid that makes up the drink
      * @param glass  the type of glass the drink is served in
      */
-    GlassDrink(String name, Liquid liquid, GlassType glass) {
+    public GlassDrink(String name, Liquid liquid, GlassType glass) {
         super(name, liquid);
         this.glass = glass;
     }
@@ -33,7 +33,7 @@ public class GlassDrink extends ComplexDrink {
      * @param liquids the list of liquids that make up the drink
      * @param glass   the type of glass the drink is served in
      */
-    GlassDrink(String name, List<Liquid> liquids, GlassType glass) {
+    public GlassDrink(String name, List<Liquid> liquids, GlassType glass) {
         super(name, liquids);
         this.glass = glass;
     }
