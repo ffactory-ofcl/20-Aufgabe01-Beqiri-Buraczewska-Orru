@@ -1,0 +1,57 @@
+package at.fhj.iit;
+
+import java.util.List;
+
+/**
+ * Class represents a colored drink which extends {@link ComplexDrink} with the
+ * possibility to set a custom color
+ */
+public class ColoredDrink extends ComplexDrink {
+    /**
+     * The color of the drink as a string
+     */
+    private String color;
+
+    /**
+     * Creates a ColoredDrink object from the given name, color and one liquid
+     * 
+     * @param name   the name of the drink
+     * @param liquid the one liquid that makes up the drink
+     * @param color  the color of the drink as a string
+     */
+    ColoredDrink(String name, Liquid liquid, String color) {
+        super(name, liquid);
+        this.color = color;
+    }
+
+    /**
+     * Creates a ColoredDrink object from the given name, color and a list of
+     * liquids
+     * 
+     * @param name    the name of the drink
+     * @param liquids the list of liquids that make up the drink
+     * @param color   the color of the drink as a string
+     */
+    ColoredDrink(String name, List<Liquid> liquids, String color) {
+        super(name, liquids);
+        this.color = color;
+    }
+
+    /**
+     * Returns the color of the drink
+     * 
+     * @return color of the drink as a string
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Sets the color of the drink
+     * 
+     * @param color desired color of the drink as a string
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+}
