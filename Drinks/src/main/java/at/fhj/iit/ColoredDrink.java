@@ -21,8 +21,11 @@ public class ColoredDrink extends ComplexDrink {
      * 
      * @throws InvalidColorException Thrown when a color other than [red, blue,
      *                               green, yellow, pink] is supplied
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException {
+    public ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException,TooManyIngredientsException {
         super(name, liquid);
         setColor(color);
     }
@@ -37,8 +40,11 @@ public class ColoredDrink extends ComplexDrink {
      * 
      * @throws InvalidColorException Thrown when a color other than [red, blue,
      *                               green, yellow, pink] is supplied
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException {
+    public ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException,TooManyIngredientsException {
         super(name, liquids);
         setColor(color);
     }

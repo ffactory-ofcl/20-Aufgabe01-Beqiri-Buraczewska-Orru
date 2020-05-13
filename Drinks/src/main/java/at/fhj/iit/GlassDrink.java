@@ -19,8 +19,11 @@ public class GlassDrink extends ComplexDrink {
      * @param name   the name of the drink
      * @param liquid the one liquid that makes up the drink
      * @param glass  the type of glass the drink is served in
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public GlassDrink(String name, Liquid liquid, GlassType glass) {
+    public GlassDrink(String name, Liquid liquid, GlassType glass) throws TooManyIngredientsException{
         super(name, liquid);
         this.glass = glass;
     }
@@ -32,8 +35,11 @@ public class GlassDrink extends ComplexDrink {
      * @param name    the name of the drink
      * @param liquids the list of liquids that make up the drink
      * @param glass   the type of glass the drink is served in
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public GlassDrink(String name, List<Liquid> liquids, GlassType glass) {
+    public GlassDrink(String name, List<Liquid> liquids, GlassType glass) throws TooManyIngredientsException {
         super(name, liquids);
         this.glass = glass;
     }

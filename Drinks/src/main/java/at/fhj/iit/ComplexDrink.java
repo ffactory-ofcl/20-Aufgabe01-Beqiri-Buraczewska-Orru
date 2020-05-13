@@ -1,10 +1,12 @@
 package at.fhj.iit;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class represents a complex drink liquid which can be used in drinks
+ * Class represents a complex drink liquid which extends {@link Drink } and
+ * accepts up to 10 objects of class Liquid
  */
 public class ComplexDrink extends Drink {
     /**
@@ -17,8 +19,11 @@ public class ComplexDrink extends Drink {
      * and liquid
      *
      * @param name name of drink
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public ComplexDrink(String name, Liquid liquid) {
+    public ComplexDrink(String name, Liquid liquid) throws TooManyIngredientsException{
         super(name);
         liquids.add(liquid);
     }
@@ -28,15 +33,14 @@ public class ComplexDrink extends Drink {
      *
      * @param name    name of drink
      * @param liquids list of liquids
+     *
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public ComplexDrink(String name, List<Liquid> liquids) {
+    public ComplexDrink(String name, List<Liquid> liquids) throws TooManyIngredientsException{
         super(name);
         liquids.addAll(liquids);
-        try {
             controlLimit();
-        } catch (TooManyIngredientsException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -84,15 +88,12 @@ public class ComplexDrink extends Drink {
      * Adds a liquid to the drink
      *
      * @param liquid the liquid to add
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public void addLiquid(Liquid liquid) {
+    public void addLiquid(Liquid liquid) throws TooManyIngredientsException{
         liquids.add(liquid);
-        try {
             controlLimit();
-        } catch (TooManyIngredientsException e) {
-            e.printStackTrace();
-        }
-
     }
 
     /**
@@ -108,14 +109,12 @@ public class ComplexDrink extends Drink {
      * Changes the current liquids of the drink
      *
      * @param liquids the new list<Liquid> of liquids
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
-    public void setLiquids(List<Liquid> liquids) {
+    public void setLiquids(List<Liquid> liquids) throws TooManyIngredientsException{
         this.liquids = liquids;
-        try {
             controlLimit();
-        } catch (TooManyIngredientsException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -130,7 +129,8 @@ public class ComplexDrink extends Drink {
     /**
      * Controls if the amount of liquids is over 10.
      *
-     * @throws TooManyIngredientsException exception could be thrown
+     * @throws TooManyIngredientsException thrown when more than 10 liquids
+     *                                     are added.
      */
     public void controlLimit() throws TooManyIngredientsException {
         if (liquids.size() > 10) {
@@ -140,12 +140,11 @@ public class ComplexDrink extends Drink {
 }
 
 /**
- * Class Exception for the limit of liquids in a drink
+ * Class that describes the exception thrown when a ComplexDrink has too many
+ * liquids.
  */
 class TooManyIngredientsException extends Exception {
-
     public TooManyIngredientsException() {
-        super("Drink has too many Ingredients.");
+        super("Drink has too many Ingredients. Allowed are up to 10 liquids.");
     }
-
 }

@@ -1,8 +1,7 @@
 package at.fhj.iit;
 
 /**
- * Class represents a kids drink liquid which can be used in
- * drinks
+ * Class represents a kids drink liquid which extends {@link Drink}
  */
 public class KidsDrink extends Drink {
     /**
@@ -22,7 +21,7 @@ public class KidsDrink extends Drink {
     public KidsDrink(Liquid liquid, boolean toy) {
         super(liquid.getName());
         if (liquid.getAlcoholPercent() > 0) {
-            System.out.println("No alcohol for kids.\nAlcohol is not included in KidsDrink " + liquid.getName() + ".");
+            System.err.println("No alcohol for kids.\nAlcohol was not added to KidsDrink " + liquid.getName() + ".");
             liquid.setAlcoholPercent(0);
         }
         this.liquid = liquid;
@@ -45,7 +44,6 @@ public class KidsDrink extends Drink {
      */
     @Override
     public double getVolume() {
-        // TODO Auto-generated method stub
 
         return liquid.getVolume();
     }
@@ -71,6 +69,7 @@ public class KidsDrink extends Drink {
             return true;
         }
         return false;
+
     }
 
     /**

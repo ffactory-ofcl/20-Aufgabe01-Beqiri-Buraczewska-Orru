@@ -43,6 +43,10 @@ public class ColoredDrinkTest {
             } catch (InvalidColorException e) {
                 fail("Generating ColoredDrink with valid color " + color + " should not fail");
             }
+            catch (TooManyIngredientsException e){
+                fail("Complex Drink cd with less than 10 liquids should not fail.");
+
+            }
         }
 
         assertThrows(InvalidColorException.class, () -> {
