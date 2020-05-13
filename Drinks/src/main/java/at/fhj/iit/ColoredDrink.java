@@ -18,10 +18,24 @@ public class ColoredDrink extends ComplexDrink {
      * @param name   the name of the drink
      * @param liquid the one liquid that makes up the drink
      * @param color  the color of the drink as a string
+     * 
+     * @throws InvalidColorException Thrown when a color other than [red, blue,
+     *                               green, yellow, pink] is supplied
      */
-    ColoredDrink(String name, Liquid liquid, String color) {
+    ColoredDrink(String name, Liquid liquid, String color) throws InvalidColorException {
         super(name, liquid);
-        this.color = color;
+        switch (name) {
+            case "red":
+            case "blue":
+            case "green":
+            case "yellow":
+            case "pink":
+                this.color = color;
+                break;
+
+            default:
+                throw new InvalidColorException();
+        }
     }
 
     /**
@@ -53,5 +67,11 @@ public class ColoredDrink extends ComplexDrink {
      */
     public void setColor(String color) {
         this.color = color;
+    }
+}
+
+class InvalidColorException extends Exception {
+    InvalidColorException() {
+        super("Invalid color. Allowed are only: [red, blue, green, yellow, pink]");
     }
 }
