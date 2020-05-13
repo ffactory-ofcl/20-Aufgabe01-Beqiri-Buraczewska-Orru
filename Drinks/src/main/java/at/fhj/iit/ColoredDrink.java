@@ -61,7 +61,7 @@ public class ColoredDrink extends ComplexDrink {
      *                               green, yellow, pink] is supplied
      */
     public void setColor(String color) throws InvalidColorException {
-        switch (name) {
+        switch (color) {
             case "red":
             case "blue":
             case "green":
