@@ -45,10 +45,24 @@ public class ColoredDrink extends ComplexDrink {
      * @param name    the name of the drink
      * @param liquids the list of liquids that make up the drink
      * @param color   the color of the drink as a string
+     * 
+     * @throws InvalidColorException Thrown when a color other than [red, blue,
+     *                               green, yellow, pink] is supplied
      */
-    ColoredDrink(String name, List<Liquid> liquids, String color) {
+    ColoredDrink(String name, List<Liquid> liquids, String color) throws InvalidColorException {
         super(name, liquids);
-        this.color = color;
+        switch (name) {
+            case "red":
+            case "blue":
+            case "green":
+            case "yellow":
+            case "pink":
+                this.color = color;
+                break;
+
+            default:
+                throw new InvalidColorException();
+        }
     }
 
     /**
@@ -70,8 +84,12 @@ public class ColoredDrink extends ComplexDrink {
     }
 }
 
+/**
+ * Class that describes the exception thrown when a ColoredDrink is created with
+ * a (string) color that is not allowed
+ */
 class InvalidColorException extends Exception {
-    InvalidColorException() {
+    public InvalidColorException() {
         super("Invalid color. Allowed are only: [red, blue, green, yellow, pink]");
     }
 }
